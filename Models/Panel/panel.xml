@@ -120,7 +120,7 @@
     </offsets>
   </model>
       <model>
-    <path>Aircraft/Instruments-3d/kx165/kx165-1.xml</path>
+    <path>Instruments/kx165/kx165-1.xml</path>
     <offsets>
       <y-m>0.05</y-m>
       <x-m>0.01</x-m>
@@ -137,7 +137,7 @@
     </offsets>
   </model>
         <model>
-    <path>Instruments/switch/alternator.xml</path>
+    <path>Instruments/switch/avionics.xml</path>
     <offsets>
       <y-m>-0.39</y-m>
       <z-m>-0.132</z-m>
