@@ -513,12 +513,6 @@
     <item>
       <name>Flaps</name>
       <value>1st step</value>
-      <marker>
-        <x-m>-1.3908</x-m>
-        <y-m>0.0050</y-m>
-        <z-m>-0.0283</z-m>
-        <scale>7.8833</scale>
-      </marker>
       <condition>
         <equals>
           <property>/controls/flight/flaps</property>
@@ -532,14 +526,29 @@
       </binding>
     </item>
     <item>
+      <name>Parking brake</name>
+      <value>released</value>
+      <condition><not>
+          <property>/controls/gear/brake-parking</property></not>
+      </condition>
+    </item>
+    <item>
+      <name>Toe Brakes</name>
+      <value>applied</value>
+      <condition><and>
+        <greater-than>
+          <property>/controls/gear/brake-right</property>
+          <value>0.95</value>
+        </greater-than>
+        <greater-than>
+          <property>/controls/gear/brake-left</property>
+          <value>0.95</value>
+        </greater-than></and>
+      </condition>
+    </item>
+    <item>
       <name>Throttle</name>
       <value>FULL OPEN</value>
-      <marker>
-        <x-m>-1.7742</x-m>
-        <y-m>-0.4517</y-m>
-        <z-m>0.2258</z-m>
-        <scale>2.1333</scale>
-      </marker>
       <condition>
         <greater-than>
           <property>/controls/engines/engine/throttle</property>
@@ -553,28 +562,154 @@
         <time>1.0</time>
       </binding>
     </item>
+    <item>
+      <name>RPM</name>
+      <value>check stable and >2500 (at 0 ft)</value>
+    </item>
+    <item>
+      <name>Brakes</name>
+      <value>release</value>
+      <condition><and>
+        <less-than>
+          <property>/controls/gear/brake-right</property>
+          <value>0.05</value>
+        </less-than>
+        <less-than>
+          <property>/controls/gear/brake-left</property>
+          <value>0.05</value>
+        </less-than></and>
+      </condition>
+    </item>
+    <item>
+      <name>at 70 kts</name>
+<value>Rotate</value>
+    </item>
+    <item>
+      <name>Follow the Climb Checklist</name>
+    </item>
+  </checklist>
+  
+  <checklist>
+    <title>Short Field Takeoff+Climb</title>  
+    <item>
+      <name>Flaps</name>
+      <value>1st step</value>
+      <condition>
+        <equals>
+          <property>/controls/flight/flaps</property>
+          <value>0.25</value>
+        </equals>
+      </condition>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/flight/flaps</property>
+        <value>0.25</value>
+      </binding>
+    </item>
+    <item>
+      <name>Parking brake</name>
+      <value>released</value>
+      <condition><not>
+          <property>/controls/gear/brake-parking</property></not>
+      </condition>
+    </item>
+    <item>
+      <name>Brakes</name>
+      <value>applied</value>
+      <condition><and>
+        <greater-than>
+          <property>/controls/gear/brake-right</property>
+          <value>0.95</value>
+        </greater-than>
+        <greater-than>
+          <property>/controls/gear/brake-left</property>
+          <value>0.95</value>
+        </greater-than></and>
+      </condition>
+    </item>
+    <item>
+      <name>Throttle</name>
+      <value>FULL OPEN</value>
+      <condition>
+        <greater-than>
+          <property>/controls/engines/engine/throttle</property>
+          <value>0.95</value>
+        </greater-than>
+      </condition>
+      <binding>
+        <command>property-interpolate</command>
+        <property>/controls/engines/engine[0]/throttle</property>
+        <value>1.00</value>
+        <time>1.0</time>
+      </binding>
+    </item>
+    <item>
+      <name>RPM</name>
+      <value>check stable and >2500 (at 0 ft)</value>
+    </item>
+    <item>
+      <name>Brakes</name>
+      <value>release</value>
+      <condition><and>
+        <less-than>
+          <property>/controls/gear/brake-right</property>
+          <value>0.05</value>
+        </less-than>
+        <less-than>
+          <property>/controls/gear/brake-left</property>
+          <value>0.05</value>
+        </less-than></and>
+      </condition>
+    </item>
+    <item>
+      <name>at 50 kts</name>
+    </item>
+    <item>
+      <name>Elevator</name>
+      <value>full back pressure</value>
+    </item>
+    <item>
+      <name>Rotate</name>
+    </item>
+    <item>
+      <name>Maintain 500ft/min, let airspeed increase to 80kts</name>
+    </item>
+    <item>
+      <name>at 80 kts</name>
+    </item>
+    <item>
+      <name>Maintain 1000ft/min</name>
+    </item>
   </checklist>
 
   <checklist>
-    <title>Enroute Climb</title>  
+    <title>Climb</title>   
+    <item>
+      <name>Flaps</name>
+      <value>Up</value>
+      <condition><equals>
+            <property>/controls/flight/flaps</property>
+            <value>0.0</value>
+          </equals>
+      </condition>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/flight/flaps</property>
+        <value>0.00</value>
+      </binding>
+    </item>
     <item>
       <name>Airspeed</name>
-      <value>115 - 125 KM/H</value>
-      <marker>
-        <x-m>-1.9258</x-m>
-        <y-m>-0.2975</y-m>
-        <z-m>0.3700</z-m>
-        <scale>4.0667</scale>
-      </marker>
+      <value>135 KM/H</value>
       <condition>
         <and>
           <greater-than>
             <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-            <value>60.0</value>
+            <value>70.0</value>
           </greater-than>
           <less-than>
             <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
-            <value>70.0</value>
+            <value>90.0</value>
           </less-than>
         </and>
       </condition>
@@ -582,12 +717,6 @@
     <item>
       <name>Throttle</name>
       <value>FULL OPEN</value>
-      <marker>
-        <x-m>-1.7742</x-m>
-        <y-m>-0.4517</y-m>
-        <z-m>0.2258</z-m>
-        <scale>2.1333</scale>
-      </marker>
       <condition>
         <greater-than>
           <property>/controls/engines/engine/throttle</property>
@@ -623,15 +752,8 @@
       </condition>
     </item>
     <item>
-
-      <name>Flaps</name>
+<name>Flaps</name>
       <value>UP</value>
-      <marker>
-        <x-m>-1.3908</x-m>
-        <y-m>0.0050</y-m>
-        <z-m>-0.0283</z-m>
-        <scale>7.8833</scale>
-      </marker>
       <condition>
         <equals>
           <property>/controls/flight/flaps</property>
@@ -647,12 +769,6 @@
     <item>
       <name>Elevator Trim</name>
       <value>ADJUST</value>
-      <marker>
-        <x-m>-1.8758</x-m>
-        <y-m>-0.0183</y-m>
-        <z-m>-0.0450</z-m>
-        <scale>1.9667</scale>
-      </marker>
     </item>
   </checklist>
 
@@ -926,4 +1042,62 @@
 </item>
 </page>
 </checklist>
+
+  <checklist>
+    <title>Emergency: Engine Failure</title>
+    <page>
+    <item>
+      <name>Fuel</name>
+      <value>Check</value>
+    </item>
+    <item>
+      <name>Battery Switch</name>
+      <value>Check</value>
+    </item>
+    <item>
+      <name>Engine Master Switch</name>
+      <value>Check</value>
+    </item>
+    <item>
+      <name>Engine Starter Switch</name>
+      <value>Restart Engine</value>
+    </item>
+    <item>
+      <name>If engine runs again</name>
+      <value>Land at next safe airport</value>
+    </item>
+    <item>
+      <name>If engine is still off</name>
+    </item>
+    <item>
+      <name>Adjust/maintain airspeed</name>
+      <value>70kts</value>
+    </item>
+    <item>
+      <name>COMM 1 Frequency</name>
+      <value>121.5 MHz</value>
+    </item>
+    <item>
+      <name>Mayday Call</name>
+    </item>
+    <item>
+      <name>Head for nearest airport or, if no airport in range, for nearest non-water, non-forest, non-city area.</name>
+    </item>
+    <item>
+      <name>Flaps</name>
+      <value>Short before landing full down.</value>
+    </item>
+    <item>
+      <name>Touchdown</name>
+    </item>
+    <item>
+      <name>Breaking</name>
+      <value>Full</value>
+    </item>
+    <item>
+      <name>After landing</name>
+      <value>Leave aircraft</value>
+    </item>
+    </page>
+  </checklist>
 </PropertyList>

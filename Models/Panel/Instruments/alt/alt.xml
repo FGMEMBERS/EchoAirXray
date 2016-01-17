@@ -47,10 +47,14 @@
     <object-name>needle100</object-name>
     <object-name>needle1000</object-name>
     <object-name>needle10000</object-name>
+    <object-name>needle100.ap</object-name>
+    <object-name>needle1000.ap</object-name>
+    <object-name>needle10000.ap</object-name>
     <object-name>inhg</object-name>
     <object-name>inhg.up</object-name>
     <object-name>inhg.dn</object-name>
-    <object-name>onhgknob</object-name>
+    <object-name>inhgknob</object-name>
+    <object-name>apknob</object-name>
     <object-name>scrollwheel-inhg</object-name>
     <condition>
 <and>
@@ -64,13 +68,91 @@
       <blue>  0.8 </blue>
     </emission>
   </animation>
+<!--Autopilot part-->
+ <animation>
+        <type>knob</type>
+        <object-name>apknob2</object-name>
+                <property>/autopilot/settings/target-altitude-ft</property>
+<factor>0.1</factor>
+        <center>
+            <x-m>0.0</x-m><y-m>0.0321</y-m><z-m>-0.0338</z-m>
+        </center>
+        <axis>
+            <x>1</x><y>0</y><z>0</z>
+        </axis>
+ 
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/autopilot/settings/target-altitude-ft</property>
+                <factor>-100</factor>
+                <min>0</min>
+                <max>40000</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+ <animation>
+        <type>knob</type>
+        <object-name>apknob</object-name>
+                <property>/autopilot/settings/target-altitude-ft</property>
+        <center>
+            <x-m>0.0</x-m><y-m>0.0321</y-m><z-m>-0.0338</z-m>
+        </center>
+        <axis>
+            <x>1</x><y>0</y><z>0</z>
+        </axis>
+ 
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/autopilot/settings/target-altitude-ft</property>
+                <factor>-10</factor>
+                <min>0</min>
+                <max>40000</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>needle100.ap</object-name>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <factor>0.36</factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
 
   <animation>
     <type>rotate</type>
+    <object-name>needle1000.ap</object-name>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <factor>0.036</factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle10000.ap</object-name>
+    <property>/autopilot/settings/target-altitude-ft</property>
+    <factor>0.0036</factor>
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+<!--Indicator part-->
+  <animation>
+    <type>rotate</type>
     <object-name>needle100</object-name>
-<condition>
-<property>/sim/model/staticvent/coverfree</property>
-</condition>
     <property>instrumentation/altimeter/indicated-altitude-ft</property>
     <factor>0.36</factor>
     <axis>
@@ -83,9 +165,6 @@
   <animation>
     <type>rotate</type>
     <object-name>needle1000</object-name>
-<condition>
-<property>/sim/model/staticvent/coverfree</property>
-</condition>
     <property>instrumentation/altimeter/indicated-altitude-ft</property>
     <factor>0.036</factor>
     <axis>
@@ -98,9 +177,6 @@
   <animation>
     <type>rotate</type>
     <object-name>needle10000</object-name>
-<condition>
-<property>/sim/model/staticvent/coverfree</property>
-</condition>
     <property>instrumentation/altimeter/indicated-altitude-ft</property>
     <factor>0.0036</factor>
     <axis>

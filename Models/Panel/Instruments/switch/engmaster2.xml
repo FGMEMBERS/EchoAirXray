@@ -2,14 +2,11 @@
 
 <PropertyList>
   
-  <path>on-off.ac</path>
+  <path>on-offR.ac</path>
   
   <animation>
-    <!-- Objets opaques -->
     <object-name>base</object-name>
     <object-name>on-off</object-name>
-    
-    <!-- Objets transparents -->
   </animation>
   
   <animation>
@@ -30,37 +27,47 @@
   </animation>
   
   <animation>
-    <type>pick</type>
-    <visible>true</visible>
     <object-name>on-off</object-name>
+    <type>rotate</type>
+    <property>controls/engines/engine[1]/condition</property>
+    <factor>  35 </factor>
+    <min-deg>  0 </min-deg>
+    <max-deg> 35 </max-deg>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>pick</type>
+    <object-name>on-off</object-name>
+
+    <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>controls/lighting/nav-lights</property>
+        <property>controls/engines/engine[1]/condition</property>
       </binding>
-<binding>
+      <binding>
         <command>property-toggle</command>
-        <property>systems/electrical/outputs/nav-lights</property>
+        <property>controls/engines/engine[1]/condition-input</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine[1]/mixture</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine[1]/propeller-pitch</property>
       </binding>
       <binding>
         <command>property-toggle</command>
         <property>sim/model/sound/click</property>
       </binding>
     </action>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>on-off</object-name>
-    <property>controls/lighting/nav-lights</property>
-    <factor> 35 </factor>
-    <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
-    </axis>
   </animation>
   
 </PropertyList>

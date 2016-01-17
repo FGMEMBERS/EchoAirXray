@@ -3,11 +3,6 @@
 <PropertyList>
   
   <path>on-offR.ac</path>
-    <nasal>
-    <load>
-set('/controls/flight/elevator-trim', 1)
-    </load>
-  </nasal>
   <animation>
     <!-- Objets opaques -->
     <object-name>base</object-name>
@@ -16,22 +11,10 @@ set('/controls/flight/elevator-trim', 1)
     <!-- Objets transparents -->
   </animation>
   
-  <animation>
-    <type>material</type>
-    <object-name>base</object-name>
-    <object-name>on-off</object-name>
-    <condition>
-<and>
-      <property>/controls/electric/battery-switch</property>
-<property>/controls/lighting/instrument-lights</property>
-</and>
-    </condition>
-    <emission>
-      <red>   0.8 </red>
-      <green> 0.8 </green>
-      <blue>  0.8 </blue>
-    </emission>
-  </animation>
+<effect>
+<inherits-from>Aircraft/EchoAirAmphibian/Models/Effects/switch-lightmap</inherits-from>
+<object-name>on-off</object-name>
+</effect>
   
   <animation>
     <object-name>on-off</object-name>
@@ -61,12 +44,11 @@ set('/controls/flight/elevator-trim', 1)
       <binding>
         <command>property-toggle</command>
         <property>sim/model/sound/click</property>
-      </binding>
+      </binding><!--
       <binding>
-	<command>property-adjust</command>
-        <property>controls/flight/elevator-trim</property>
-	<value>-0.5</value>
-      </binding>
+	<command>property-toggle</command>
+        <property>/sim/model/material/instruments/factor</property>
+      </binding>-->
     </action>
   </animation>
   

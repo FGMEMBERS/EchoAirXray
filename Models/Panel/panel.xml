@@ -11,275 +11,253 @@
     <path>Instruments/comp/comp.xml</path>
     <offsets>
       <y-m>0.0</y-m>
-      <x-m>0.4</x-m>
-      <z-m>0.4</z-m>
-<pitch-deg>20</pitch-deg>
+      <x-m>0.2</x-m>
+      <z-m>0.33</z-m>
+<pitch-deg>30</pitch-deg>
     </offsets>
   </model>
-    <model>
-    <path>Aircraft/EchoAirTraveller/Models/MFD/mfd.xml</path>
-    <offsets>
-      <y-m>0.25</y-m>
-      <x-m>-0.00</x-m>
-      <z-m>-0.0</z-m>
-<pitch-deg>90</pitch-deg>
-<roll-deg>90</roll-deg>
-    </offsets>
-  </model>
+<!--Autopilot-->
 
-  <!-- The "Standart 6" LEFT-->
     <model>
-    <path>Instruments/asi/asi.xml</path>
+    <path>Instruments/ap/ap.xml</path>
     <offsets>
-      <y-m>-0.4</y-m>
-      <x-m>0.01</x-m>
-      <z-m>0.07</z-m>
+      <y-m>0.0</y-m>
+      <x-m>-0.07</x-m>
+      <z-m>0.15</z-m>
     </offsets>
   </model>
+<!-- Avionics RIGHT (reduced setup, pilot left)-->
       <model>
     <path>Instruments/ai/ai.xml</path>
     <offsets>
-      <y-m>-0.3</y-m>
-      <x-m>0.01</x-m>
-      <z-m>0.07</z-m>
+      <y-m>0.5</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>0.04</z-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Instruments/asi/asi.xml</path>
+    <offsets>
+      <y-m>0.4</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>0.04</z-m>
     </offsets>
   </model>
     <model>
     <path>Instruments/alt/alt.xml</path>
     <offsets>
-      <y-m>-0.2</y-m>
-      <x-m>0.01</x-m>
-      <z-m>0.07</z-m>
-    </offsets>
-  </model>
-    <model>
-    <path>Aircraft/Instruments-3d/tc/tc.xml</path>
-    <offsets>
-      <y-m>-0.4</y-m>
-      <x-m>0.01</x-m>
+      <y-m>0.5</y-m>
+      <x-m>-0.00</x-m>
       <z-m>-0.05</z-m>
     </offsets>
   </model>
         <model>
-    <path>Aircraft/Instruments-3d/hi/hi.xml</path>
+    <path>Instruments/hi/hi.xml</path>
+    <offsets>
+      <y-m>0.4</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>-0.05</z-m>
+    </offsets>
+  </model>
+<!-- The "Standart 6" LEFT-->
+      <model>
+    <path>Instruments/ai/ai.xml</path>
+    <offsets>
+      <y-m>-0.5</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>0.04</z-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Instruments/asi/asi.xml</path>
+    <offsets>
+      <y-m>-0.4</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>0.04</z-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Instruments/alt/alt.xml</path>
     <offsets>
       <y-m>-0.3</y-m>
-      <x-m>0.01</x-m>
+      <x-m>-0.0</x-m>
+      <z-m>0.04</z-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Instruments/tc/tc.xml</path>
+    <offsets>
+      <y-m>-0.5</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>-0.05</z-m>
+    </offsets>
+  </model>
+        <model>
+    <path>Instruments/hi/hi.xml</path>
+    <offsets>
+      <y-m>-0.4</y-m>
+      <x-m>-0.00</x-m>
       <z-m>-0.05</z-m>
     </offsets>
   </model>
   <model>
     <path>Instruments/vsi/vsi.xml</path>
     <offsets>
-      <y-m>-0.2</y-m>
-      <x-m>0.01</x-m>
+      <y-m>-0.3</y-m>
+      <x-m>-0.00</x-m>
       <z-m>-0.05</z-m>
     </offsets>
   </model>
-
-
-   <model>
+ <!--  <model>
     <path>Instruments/fuel/fuel1.xml</path>
     <offsets>
-      <y-m>-0.03</y-m>
+      <y-m>-0.43</y-m>
       <x-m>0.01</x-m>
-      <z-m>-0.14</z-m>
+      <z-m>-0.08</z-m>
     </offsets>
   </model>
    <model>
     <path>Instruments/fuel/fuel2.xml</path>
     <offsets>
-      <y-m>0.0</y-m>
+      <y-m>-0.4</y-m>
       <x-m>0.01</x-m>
-      <z-m>-0.14</z-m>
+      <z-m>-0.08</z-m>
     </offsets>
   </model>
    <model>
     <path>Instruments/fuel/fuel3.xml</path>
     <offsets>
-      <y-m>0.03</y-m>
-      <x-m>0.01</x-m>
-      <z-m>-0.14</z-m>
-    </offsets>
-  </model>
-     <model>
-    <path>Aircraft/Instruments-3d/tach/tach.xml</path>
-    <offsets>
-      <y-m>-0.0</y-m>
+      <y-m>-0.37</y-m>
       <x-m>0.01</x-m>
       <z-m>-0.08</z-m>
     </offsets>
+  </model>-->
+
+     <model>
+    <path>Instruments/tach/tach1.xml</path>
+    <offsets>
+      <y-m>-0.2</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>-0.05</z-m>
+    </offsets>
   </model>
-<!--Communication -->
+<!--Communication/Navigation -->
       <model>
     <path>Aircraft/Instruments-3d/kt76a/kt76a.xml</path>
     <offsets>
-      <y-m>0.05</y-m>
-      <x-m>0.01</x-m>
-      <z-m>0.00</z-m>
+      <y-m>0.25</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>0.07</z-m> 
     </offsets>
   </model>
       <model>
     <path>Instruments/kx165/kx165-1.xml</path>
     <offsets>
-      <y-m>0.05</y-m>
-      <x-m>0.01</x-m>
-      <z-m>0.05</z-m>
+      <y-m>0.25</y-m>
+      <x-m>-0.00</x-m>
+      <z-m>0.02</z-m> 
     </offsets>
   </model>
 <!--Switches-->
       <model>
     <path>Instruments/switch/battery.xml</path>
     <offsets>
-      <y-m>-0.41</y-m>
-      <z-m>-0.132</z-m>
-      <x-m>-0.0045</x-m>
+      <y-m>-0.24</y-m>
+      <x-m>-0.0</x-m>
+      <z-m>0.09</z-m>
     </offsets>
   </model>
         <model>
     <path>Instruments/switch/avionics.xml</path>
     <offsets>
-      <y-m>-0.39</y-m>
-      <z-m>-0.132</z-m>
-      <x-m>-0.0045</x-m>
-    </offsets>
-  </model>
-   <model>
-    <path>Instruments/switch/engmaster.xml</path>
-    <offsets>
-      <y-m>-0.25</y-m>
-      <z-m>-0.132</z-m>
-      <x-m>-0.0045</x-m>
-    </offsets>
-  </model>
-    <model>
-    <path>Instruments/switch/engstart.xml</path>
-    <offsets>
-      <y-m>-0.23</y-m>
-      <z-m>-0.132</z-m>
-      <x-m>-0.0045</x-m>
+      <y-m>-0.22</y-m>
+      <x-m>0.00</x-m>
+      <z-m>0.09</z-m>
     </offsets>
   </model>
     <model>
     <path>Instruments/switch/strobe-lights.xml</path>
     <offsets>
-      <y-m>-0.36</y-m>
-      <z-m>-0.132</z-m>
-      <x-m>-0.0045</x-m>
-    </offsets>
-  </model>
-      <model>
-    <path>Instruments/switch/landing-lights.xml</path>
-    <offsets>
-      <y-m>-0.32</y-m>
-      <z-m>-0.132</z-m>
-      <x-m>-0.0045</x-m>
+      <y-m>-0.24</y-m>
+      <x-m>0.00</x-m>
+      <z-m>0.035</z-m>
     </offsets>
   </model>
      <model>
     <path>Instruments/switch/nav-lights.xml</path>
     <offsets>
-      <y-m>-0.34</y-m>
-      <z-m>-0.132</z-m>
-      <x-m>-0.0045</x-m>
+      <y-m>-0.22</y-m>
+      <x-m>0.00</x-m>
+      <z-m>0.035</z-m>
+    </offsets>
+  </model>
+      <model>
+    <path>Instruments/switch/landing-lights.xml</path>
+    <offsets>
+      <y-m>-0.2</y-m>
+      <x-m>0.00</x-m>
+      <z-m>0.035</z-m>
     </offsets>
   </model>
    <model>
     <path>Instruments/switch/instr-lights.xml</path>
     <offsets>
-      <y-m>-0.30</y-m>
-      <z-m>-0.132</z-m>
-      <x-m>-0.0045</x-m>
+      <y-m>-0.18</y-m>
+      <x-m>0.00</x-m>
+      <z-m>0.035</z-m>
     </offsets>
   </model>
+<!--Engine control-->
 
+   <model>
+    <path>Instruments/switch/engmaster1.xml</path>
+    <offsets>
+      <y-m>-0.19</y-m>
+      <x-m>0.00</x-m>
+      <z-m>0.09</z-m>
+    </offsets>
+  </model>
+    <model>
+    <path>Instruments/switch/engstart1.xml</path>
+    <offsets>
+      <y-m>-0.17</y-m>
+      <x-m>0.00</x-m>
+      <z-m>0.09</z-m>
+    </offsets>
+  </model>
 <!--Text-->
    <model>
-    <path>Instruments/text/battalt.ac</path>
+    <path>Instruments/text/battalt.xml</path>
     <offsets>
-      <y-m>-0.40</y-m>
-      <z-m>-0.155</z-m>
-      <x-m>-0.004</x-m>
+      <y-m>-0.23</y-m>
+      <x-m>-0.0</x-m>
+      <z-m>0.06</z-m>
 <heading-deg>180</heading-deg>
     </offsets>
   </model>
    <model>
-    <path>Instruments/text/lights.ac</path>
+    <path>Instruments/text/lights.xml</path>
     <offsets>
-      <y-m>-0.33</y-m>
-      <z-m>-0.155</z-m>
-      <x-m>-0.004</x-m>
+      <y-m>-0.21</y-m>
+      <x-m>0.00</x-m>
+      <z-m>0.005</z-m>
     </offsets>
   </model>
    <model>
     <path>Instruments/text/engine.ac</path>
     <offsets>
-      <y-m>-0.24</y-m>
-      <z-m>-0.155</z-m>
-      <x-m>-0.004</x-m>
+      <y-m>-0.18</y-m>
+      <x-m>-0.0</x-m>
+      <z-m>0.06</z-m>
     </offsets>
   </model>
-<!--Flaps lever-->
-   <model>
-    <path>Instruments/flaps/flaps.ac</path>
+<!--Primary flight displays-->
+     <model>
+    <path>Instruments/zkv1000/mfd.xml</path>
     <offsets>
       <y-m>-0.0</y-m>
-      <z-m>-0.5</z-m>
-      <x-m>0.8</x-m>
-<pitch-deg>20</pitch-deg>
+      <x-m>-0.008</x-m>
+      <z-m>-0.0</z-m> 
     </offsets>
   </model>
-<animation>
-<type>rotate</type>
-<object-name>flapslever</object-name>
-<property>/surface-positions/flap-pos-norm</property>
-<factor>60</factor>
-<axis><y>1</y></axis>
-<center>
-<x-m>0.0</x-m>
-<y-m>0.0</y-m>
-<z-m>0.0</z-m>
-</center>
-</animation>
-<!--Throttle lever-->
-   <model>
-    <path>Instruments/throttle/throttle.ac</path>
-    <offsets>
-      <y-m>-0.0</y-m>
-      <z-m>-0.4</z-m>
-      <x-m>0.5</x-m>
-<pitch-deg>20</pitch-deg>
-    </offsets>
-  </model>
-<animation>
-<type>rotate</type>
-<object-name>throttlelever</object-name>
-<object-name>throttlecylinder</object-name>
-<property>/controls/engines/engine/throttle</property>
-<factor>-60</factor>
-<axis><y>1</y></axis>
-<center>
-<x-m>0.0</x-m>
-<y-m>0.0</y-m>
-<z-m>0.0</z-m>
-</center>
-</animation>
-<!--Checklists-->
-<animation>
-<type>pick</type>
-    <object-name>checklists</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>  
-      <binding>
-        <command>property-toggle</command>
-        <property>/sim/model/checklists</property>
-      </binding>
-        <binding>
-          <command>dialog-show</command>
-          <dialog-name>checklist</dialog-name>
-        </binding>
-    </action>
-</animation>
-
 </PropertyList>

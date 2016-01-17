@@ -5,23 +5,32 @@
   <path>on-offR.ac</path>
   
   <animation>
-    <!-- Objets opaques -->
     <object-name>base</object-name>
     <object-name>on-off</object-name>
-    
-    <!-- Objets transparents -->
   </animation>
   
-<effect>
-<inherits-from>Aircraft/EchoAirJetSet/Models/Effects/switch-lightmap</inherits-from>
-<object-name>on-off</object-name>
-</effect>
+  <animation>
+    <type>material</type>
+    <object-name>base</object-name>
+    <object-name>on-off</object-name>
+    <condition>
+<and>
+      <property>/controls/electric/battery-switch</property>
+<property>/controls/lighting/instrument-lights</property>
+</and>
+    </condition>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  0.8 </blue>
+    </emission>
+  </animation>
   
   <animation>
     <object-name>on-off</object-name>
     <type>rotate</type>
-    <property>/systems/electrical/outputs/master-avionics</property>
-    <factor> 35 </factor>
+    <property>controls/engines/engine[0]/magnetos</property>
+    <factor>  35 </factor>
     <min-deg>  0 </min-deg>
     <max-deg> 35 </max-deg>
     <axis>
@@ -30,25 +39,23 @@
       <z>  0 </z>
     </axis>
   </animation>
-  
   <animation>
     <type>pick</type>
     <object-name>on-off</object-name>
+
     <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
-        <command>property-toggle</command>
-    <property>/systems/electrical/outputs/master-avionics</property>
+        <command>property-cycle</command>
+        <property>controls/engines/engine[0]/magnetos</property>
+	<value>3</value>
+	<value>0</value>
       </binding>
       <binding>
         <command>property-toggle</command>
         <property>sim/model/sound/click</property>
-      </binding>
-      <binding>
-	<command>property-toggle</command>
-        <property>/instrumentation/zkv1000/pfd/status</property>
       </binding>
     </action>
   </animation>

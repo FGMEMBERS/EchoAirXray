@@ -31,6 +31,7 @@
       baggage_door.alias(float_4);
       engine_door.alias(float_5);
       battery_door.alias(float_6);
+
     </load>
 
     <unload>
@@ -92,9 +93,9 @@
 <model>
     <path>Panel/panel.xml</path>
     <offsets>
-      <x-m>-2.175</x-m>
-<z-m>-0.04</z-m>
-<pitch-deg>-20</pitch-deg>
+      <x-m>-1.97855</x-m>
+<z-m>0.03645</z-m>
+<pitch-deg>-40</pitch-deg>
     </offsets>
     </model>
   <animation>
@@ -115,23 +116,31 @@
     </emission>
   </animation>
 
-
  <animation>
     <type>material</type>
     <object-name>hstab</object-name>
     <object-name>elevator</object-name>
+    <object-name>rudder</object-name>
+    <object-name>spinner</object-name>
     <object-name>vstab</object-name>
-    <object-name>fuselage</object-name>
+    <object-name>body</object-name>
+    <object-name>fairingL</object-name>
+    <object-name>fairingR</object-name>
+    <object-name>fairing</object-name>
     <object-name>wheelL</object-name>
     <object-name>wheelR</object-name>
     <object-name>wheelF</object-name>
-    <object-name>gearfront</object-name>
-    <object-name>gearfixF2</object-name>
-    <object-name>gearfixR</object-name>
+    <object-name>gearF2</object-name>
+    <object-name>gearF1</object-name>
+    <object-name>gearR</object-name>
+    <object-name>gearL</object-name>
     <object-name>prop</object-name>
     <object-name>battdoor</object-name>
     <object-name>baggagedoor</object-name>
    	<object-name>wing</object-name>
+   	<object-name>flaps</object-name>
+   	<object-name>aileronL</object-name>
+   	<object-name>aileronR</object-name>
           <object-name>doorRL</object-name>
           <object-name>doorRR</object-name>
           <object-name>doorFL</object-name>
@@ -153,15 +162,16 @@
     </specular>
   </animation>
 
-  <effect>
-    <inherits-from>Effects/glass</inherits-from>
+<effect>
+		<inherits-from>Effects/reflectglass</inherits-from>
           <object-name>windowRL</object-name>
           <object-name>windowRR</object-name>
           <object-name>windowFL</object-name>
           <object-name>windowFR</object-name>
-          <object-name>taillight</object-name>
-          <object-name>strobelight</object-name>
-          <!--<object-name>navlight</object-name>-->
+</effect>
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+          <object-name>propdisc</object-name>
   </effect>
 <model>
     <path>Immat/immat.xml</path>
@@ -173,7 +183,7 @@
     <condition>
       <greater-than>
         <property>engines/engine[0]/rpm</property>
-        <value>1500</value>
+        <value>900</value>
       </greater-than>
     </condition>
   </animation>
@@ -217,7 +227,7 @@
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
-      <z-m> -0.17507 </z-m>
+      <z-m> -0.17028 </z-m>
     </center>
     <axis>
       <x> -1 </x>
@@ -237,7 +247,7 @@
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
-      <z-m> -0.17507 </z-m>
+      <z-m> -0.17028 </z-m>
     </center>
     <axis>
       <x> -1 </x>
@@ -341,8 +351,8 @@
       <entry><ind>  0.75 </ind><dep>   15 </dep></entry>
     </interpolation>
     <center>
-      <x-m> 3.49198 </x-m>
-      <z-m> -0.18249 </z-m>
+      <x-m> 3.9657 </x-m>
+      <z-m> 0.0937 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -355,16 +365,12 @@
     <type>rotate</type>
     <object-name>rudder</object-name>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor>100</factor>
-    <center>
-            <x-m>3.5054 </x-m>
-      <z-m> 0.4882</z-m>
-    </center>
+    <factor>40</factor>
     <axis>
-      <x1-m>3.5054 </x1-m>
-      <z1-m> 0.4882</z1-m>
-      <x2-m>3.8755 </x2-m>
-      <z2-m>1.7461</z2-m>
+      <x1-m>3.8043 </x1-m>
+      <z1-m> 0.574</z1-m>
+      <x2-m>4.163 </x2-m>
+      <z2-m>1.8263</z2-m>
     </axis>
   </animation>
     <animation>
@@ -499,15 +505,14 @@
     <object-name>windowRL</object-name>
     <property>sim/model/door-positions/passengerL/position-norm</property>
     <factor> -120 </factor>
-<center>
-<x-m>-0.276</x-m>
-<y-m>-0.3729</y-m>
-<z-m>0.7427</z-m>
-</center>
-    <axis>
-      <y> 0.1 </y>
-      <x> 1 </x>
-    </axis>
+  <axis>   
+   <x1-m>-0.5355</x1-m>
+   <y1-m>-0.4787</y1-m>
+   <z1-m>0.6719</z1-m>
+   <x2-m>0.0887</x2-m>
+   <y2-m>-0.575</y2-m>
+   <z2-m>0.5647</z2-m>
+  </axis>
   </animation>
  <animation>
     <type>pick</type>
@@ -527,15 +532,14 @@
     <object-name>windowRR</object-name>
     <property>sim/model/door-positions/passengerR/position-norm</property>
     <factor> 120 </factor>
-<center>
-<x-m>-0.276</x-m>
-<y-m>0.3729</y-m>
-<z-m>0.7427</z-m>
-</center>
-    <axis>
-      <y> 0.1 </y>
-      <x> 1 </x>
-    </axis>
+  <axis>   
+   <x1-m>-0.5355</x1-m>
+   <y1-m>0.4787</y1-m>
+   <z1-m>0.6719</z1-m>
+   <x2-m>0.0887</x2-m>
+   <y2-m>0.575</y2-m>
+   <z2-m>0.5647</z2-m>
+  </axis>
   </animation>
 <!--Battery door-->
  <animation>
@@ -590,19 +594,15 @@
     <property>sim/model/door-positions/FL_door/position-norm</property>
     <factor> -90 </factor>
   <axis>   
-<x1-m>-2.6583</x1-m>
-<y1-m>-0.037</y1-m>
-<z1-m>0.1551</z1-m>
-   <x2-m> -1.7624</x2-m>
-   <y2-m>-0.037</y2-m>
-   <z2-m>0.5884</z2-m>
+<x1-m>-2.2874</x1-m>
+<y1-m>-0.0279</y1-m>
+<z1-m>0.3574</z1-m>
+   <x2-m> -1.7069</x2-m>
+   <y2-m>-0.0279</y2-m>
+   <z2-m>0.5848</z2-m>
   </axis>
-<center>
-<x-m>-2.6583</x-m>
-<y-m>-0.037</y-m>
-<z-m>0.1551</z-m>
-</center>
   </animation>
+
  <animation>
     <type>pick</type>
     <object-name>windowFR</object-name>
@@ -615,26 +615,58 @@
       </binding>
     </action>
   </animation>
-  
   <animation>
     <type>rotate</type>
     <object-name>windowFR</object-name>
     <property>sim/model/door-positions/FR_door/position-norm</property>
     <factor> 90 </factor>
   <axis>   
-<x1-m>-2.6583</x1-m>
-<y1-m>0.037</y1-m>
-<z1-m>0.1551</z1-m>
-   <x2-m> -1.7624</x2-m>
-   <y2-m>0.037</y2-m>
-   <z2-m>0.5884</z2-m>
+<x1-m>-2.2874</x1-m>
+<y1-m>0.0279</y1-m>
+<z1-m>0.3574</z1-m>
+   <x2-m> -1.7069</x2-m>
+   <y2-m>0.0279</y2-m>
+   <z2-m>0.5848</z2-m>
   </axis>
-<center>
-<x-m>-2.6583</x-m>
-<y-m>0.037</y-m>
-<z-m>0.1551</z-m>
-</center>
-
+  </animation>
+<!--Human presence-->
+    <animation>
+    <type>select</type>
+    <object-name>pilot</object-name>
+<condition>
+<greater-than>
+    <property>sim/weight[0]/weight-lb</property>
+<value>100</value>
+</greater-than>
+</condition>
+  </animation>
+    <animation>
+    <type>select</type>
+    <object-name>copilot</object-name>
+<condition><greater-than>
+    <property>sim/weight[1]/weight-lb</property>
+<value>100</value>
+</greater-than>
+</condition>
+  </animation>
+    <animation>
+    <type>select</type>
+    <object-name>pax</object-name>
+<condition><greater-than>
+    <property>sim/weight[2]/weight-lb</property>
+<value>100</value>
+</greater-than>
+</condition>
+  </animation>
+<!--not yet-->
+    <animation>
+    <type>select</type>
+    <object-name>cargo</object-name>
+<condition><greater-than>
+    <property>sim/weight[3]/weight-lb</property>
+<value>10</value>
+</greater-than>
+</condition>
   </animation>
 
 <!--GEAR-->
@@ -658,24 +690,24 @@
   </animation>
   <animation>
    <type>translate</type>
-   <object-name>gearF</object-name>
+   <object-name>gearF1</object-name>
    <object-name>fairing</object-name>
    <object-name>wheelF</object-name>
    <property>gear/gear[0]/compression-m</property>
-   <factor>0.09</factor>
+   <factor>1</factor>
    <axis>
-     <x>-0.1</x>
+     <x>0.2</x>
      <y>0</y>
      <z>1.0</z>
    </axis>
  </animation>
   <animation>
    <type>translate</type>
-   <object-name>gearfixL</object-name>
+   <object-name>gearL</object-name>
    <object-name>fairingL</object-name>
    <object-name>wheelL</object-name>
    <property>gear/gear[1]/compression-m</property>
-   <factor>0.09</factor>
+   <factor>1</factor>
    <axis>
      <x>-0.1</x>
      <y>0</y>
@@ -684,11 +716,11 @@
  </animation>
   <animation>
    <type>translate</type>
-   <object-name>gearfixR</object-name>
-   <object-name>fairinR</object-name>
+   <object-name>gearR</object-name>
+   <object-name>fairingR</object-name>
    <object-name>wheelR</object-name>
    <property>gear/gear[2]/compression-m</property>
-   <factor>0.09</factor>
+   <factor>1</factor>
    <axis>
      <x>-0.1</x>
      <y>0</y>

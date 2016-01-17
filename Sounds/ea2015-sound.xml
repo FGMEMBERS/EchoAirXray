@@ -236,18 +236,17 @@ August/September 2015 : Updated by D-ECHO to fit Traveller
       <max-dist>1000</max-dist>
     </squeal>
 
-    <flap>
+   <!-- <flap>
       <name>flaps</name>
       <mode>in-transit</mode>
       <path>ea2015-flaps.wav</path>
-       <!--path>Sounds/flaps.wav</path>-->
       <property>surface-positions/flap-pos-norm</property>
       <volume>
         <factor>5</factor>
       </volume>
       <reference-dist>10.0</reference-dist>
       <max-dist>100.0</max-dist>
-    </flap>
+    </flap>-->
 
     <stall>
       <name>stall</name>

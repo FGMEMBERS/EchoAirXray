@@ -31,8 +31,8 @@
    <internal archive="y">true</internal>
    <config>
      <x-offset-m archive="y">-0.2504</x-offset-m><!--blender y-->
-     <y-offset-m archive="y">0.1924</y-offset-m><!-- blender z-->
-     <z-offset-m archive="y">-1.1213</z-offset-m><!-- blender x -->
+     <y-offset-m archive="y">0.3847</y-offset-m><!-- blender z-->
+     <z-offset-m archive="y">-1.4079</z-offset-m><!-- blender x -->
      <pitch-offset-deg>-15</pitch-offset-deg>
    </config>
   </view>
@@ -44,8 +44,8 @@
       <from-model type="bool">true</from-model>
       <from-model-idx type="int">0</from-model-idx>
      <x-offset-m archive="y">0.2504</x-offset-m><!--blender y-->
-     <y-offset-m archive="y">0.1924</y-offset-m><!-- blender z-->
-     <z-offset-m archive="y">-1.1213</z-offset-m><!-- blender x -->
+     <y-offset-m archive="y">0.3847</y-offset-m><!-- blender z-->
+     <z-offset-m archive="y">-1.4079</z-offset-m><!-- blender x -->
      <pitch-offset-deg>-15</pitch-offset-deg>
    </config>
   </view>

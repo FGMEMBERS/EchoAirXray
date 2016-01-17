@@ -54,10 +54,7 @@
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-<condition>
-<property>/sim/model/pitot/coverfree</property>
-</condition>
-    <property>instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    <property>velocities/airspeed-kt</property>
     <interpolation>
      <entry><ind>   0 </ind><dep>   0 </dep></entry>
      <entry><ind>  30 </ind><dep>  10 </dep></entry>

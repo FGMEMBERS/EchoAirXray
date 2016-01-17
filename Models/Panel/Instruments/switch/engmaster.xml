@@ -49,10 +49,9 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
-        <command>property-cycle</command>
+        <command>property-toggle</command>
         <property>controls/engines/engine[0]/magnetos</property>
-  <value type="string">3</value>
-  <value type="string">0</value>
+<factor>3</factor>
       </binding>
       <binding>
         <command>property-toggle</command>
